@@ -6,16 +6,16 @@ import os.path
 
 class Manager:
 
-    pets = {}
+    pets = {} #Empty Dictionary for loading, adding data to the inventory of each class instance
 
     def __init__(self):
         self.load()
 
     def add(self, key, qty):
         if key in self.pets:
-            self.pets[key] += qty
+            self.pets[key] += qty #adds to the quantity of existing key
         else:
-            self.pets[key] = qty
+            self.pets[key] = qty  #adds a new key to dictionary
 
         print("Addition Complete!")
         print("Key: {}, Total: {}".format(key, self.pets[key]) )
@@ -42,7 +42,7 @@ class Manager:
     def save(self):
         print("\nSaving Inventory")
 
-        filename = "inventory.txt"
+        filename = "inventory.txt"  #filename is modifiable to make a new file as per user's choice
         with open(filename, 'w') as f:
             json.dump(self.pets, f)
 
@@ -51,7 +51,7 @@ class Manager:
     def load(self):
         print("\nLoading Inventory")
 
-        filename = "inventory.txt"
+        filename = "inventory.txt" #filename is modifiable to load a new file as per user's choice
 
         if not os.path.exists(filename):
             print("Nothing to Load!\n")
