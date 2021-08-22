@@ -1,0 +1,1 @@
+{"Cat": 9, "Dog": 54, "Rabbit": 4, "Parrot": 8}
